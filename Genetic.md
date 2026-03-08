@@ -501,9 +501,10 @@ timeline
 - 儀器用雷射激發螢光，偵測片段通過的時間
 - 結果呈現：電腦會畫出峰圖 (electropherogram)，每個峰代表一個片段的大小。具體來說，就是一個橫軸為片段大小，縱軸為螢光強度的圖
 - 假如說，某STR位點出現兩個峰，表示此人有兩個不同長度的等位基因 (heterozygous)。如果只有一個波峰，那就是 homozygous
+
 ---
 
-## chapter 2, 3
+## chapter 3
 ### classical genetics
 - 古典遺傳學OG孟德爾開創
 - 發明hereditary factors (遺傳因子) 這詞，就是現在知道的gene
@@ -605,3 +606,161 @@ timeline
 |$bE$|$Bb\ EE$ ⚫|$bb\ EE$ 🟤|$Bb\ Ee$ ⚫|$bb\ Ee$ 🟤|
 |$Be$|$BB\ Ee$ ⚫|$Bb\ Ee$ ⚫|$BB\ ee$ 🟡|$Bb\ ee$ 🟡|
 |$be$|$Bb\ Ee$ ⚫|$bb\ Ee$ 🟤|$Bb\ ee$ 🟡|$bb\ ee$ 🟡|
+### 當環境遇上基因
+#### the penetrance
+- 並不是說你有這個基因就一定會發病，有時你有該致病基因，不一定會表現出性狀。這個現象可以用**穿透率**來解釋
+- 定義: 在攜帶特定致病基因的群體中實際表現出該疾病性狀的人數比例
+
+$$\frac{\text{表現出性狀的人數}}{\text{攜帶致病基因的人數}}\times 100%\text{%}$$
+
+- 如果是complete penetrance，那有突變基因就一定會發病 (存在一對一絕對關係)
+- 如果是incomplete penetrance，那麼攜帶基因不一定會發病
+- 例如某些遺傳性癌症 (如*BRCA1*基因突變) 雖然屬於顯性突變，但是個體可能也不會發病 
+> [!Warning]
+> 並不是所有的顯性疾病都能夠完全穿透 !! 
+
+##### 影響穿透率的因素
+> 為什麼有些人會生病，有些人不會?
+
+- 環境因素: 不同的飲食或是生活習慣，或著是接觸的化學物質會影響
+- epistasis: 其他基因可能掩蓋主校基因的作用
+- epigenetics: DNA可能被甲基化
+- age-dependency: 有些疾病需要年齡增長才會表現，又稱為延遲穿透
+
+#### the expreesivity
+- 即使發病了，每個人的表現形嚴重程度也有所不同
+- 即使在同一個家族，攜帶同一個突變位點的成員之間，病情的輕重程度也有所不同。這叫做表現度的多樣性 (variable expressivity)
+- 例如Marfan syndrome (chr15的 *FBN1* 基因突變)，有些人可能只是表現出瘦長的身材，有些人會有嚴重的心血管併發症或是眼部問題
+
+|概念|penetrance|expressivity|
+|---|----------|------------|
+|關鍵問題|是否發病|病得多嚴重|
+|本質|all-or-none (要麼發病，要麼不發病)|spectrum (嚴重程度呈現連續分布)|
+|definition|攜帶者中表現出症狀的比例|患者間臨床表現的一致性|
+
+- 如同穿透率，表現度也受到其他修飾基因、環境、表觀遺傳的影響
+
+#### 表現型、基因型跟環境
+- 就算基因型相同，不同環境條件下也可能會有不同表現型:
+
+$$phenotype=genotype + environmental factors$$
+
+- 例如物種*Ranunculus aquatilis*，即使是同一株植物，水面下葉片 (絲狀) 跟水面上葉片 (掌狀) 就不一樣
+- 喜瑪拉雅兔在體溫低的肢端長出黑毛，在體溫高的身體核心區域長出白毛 (因為調控黑色素的酵素tyrosinase只會在低溫下正常運作)
+
+#### phenocopy
+- 表現型模擬指的是**非基因突變造成的表型**，但其外觀或症狀卻與某個遺傳性疾病非常相似
+- that is，環境因素或其他非遺傳原因 "模仿" 了某個基因突變的表現，因此不會傳給下一代 (non-hereditary)
+>[!Tip] 
+>舉最簡單的例子: 你吃太多phenylalanine也會中毒，看起來就跟患上PKU的人一樣 🙂
+
+#### mtDNA transmission
+- 粒線體主要存在於卵子的細胞質中，即使發生了paternal leakage (精子的粒線體不小心跑進卵子)，也往往會被細胞標記 (機制通常包含ubiquitination) 跟降解
+- 由於粒線體基因僅來自母親，不涉及減數分裂中的染色體分配，因此不遵守孟德爾遺傳法則
+> [!Note]
+> 其實粒線體也可能會移傳自父親! 一個[發表在PNAS期刊上的研究](https://www.pnas.org/doi/full/10.1073/pnas.1810946115)發現一些患有粒線體疾病的病人 (症狀包含疲勞、肌張力低下、肌肉疼痛及眼瞼下垂等等)，它們有來自雙親的粒線體 😮
+
+#### mosaicism
+- 一個個體出現多個基因型: 同一個個體中，存在兩種或兩
+種以上具有不同基因型的細胞群
+- 通常是因為胚胎發育過程中，單一細胞發生突變，且僅將該突變傳給自己的子細胞導致的現象
+- 通常mosacism分成兩種: germline跟somatic類型
+
+##### germline/gonadal mosaicism
+- 突變只有在產生配子的細胞中出現，其他的體細胞完全沒問題。通常就是在發育的時候，生殖幹細胞的突變導致
+- 父母沒事，孩子發病
+- 如果一對健康的父母生下的孩子都有相同的顯性遺傳疾病，就可能是germline mosacism導致
+
+##### somatic mosaicism
+- 個體的體細胞具有超過一種基因型。通常就是胚胎發育時在有絲分裂中出現錯誤或是突變
+- 不會傳給下一代，個體表現可能例如局部的皮膚顏色出現差異，或是局部神經系統異常
+
+##### challenges
+- 傳統抽血檢測 (檢驗白血球DNA) 可能測不出來
+- NGS可能也測不出來 (偵測到的比例可能低於5%)
+
+#### chimerism
+- 一個單一生物體由兩個或是多個zygotes的細胞形成
+- 非常非常非常罕見，遺傳表現可能包含:
+  - 44, XX 加上 44, XY → 個體同時有兩套性器官
+  - 組織異源性 (不同器官的DNA可能完全不一樣)
+  - 當作親子鑑定發現DNA不符合時，可能孩子的父母為chimerism
+- 當然，也有可能是後天性的 (acquired chimerism)，也就是透過器官移植得來的
+  - 例如，做了骨髓移殖之後，受贈者的血型改變
+
+|類型|mosacism|chimerism|
+|---|--------|---------|
+|來源|單一zygote|多個zygotes|
+|發生時間|受精卵發育期間|受精卵早期榮的時候，或是後天移殖導致|
+|example|somatic mosaicism、gonadal mosaicism|先天性 (融合胎兒) 或是後天性 (器官移植)|
+
+![image alt](https://www.waivingentropy.com/wp-content/uploads/2013/09/Mosaicism-and-chimerism.jpg)
+
+---
+
+## chapter 4
+### relationship between genes and chromosomes
+#### 再review一次
+- 成雙成對
+- segragation (分離率)
+- independent assortment (獨立分配率，僅限於非連鎖的基因)
+
+#### karyotype
+- 每個物種都有一整套屬於其自己的染色體 (chromosome completment)
+- 用視覺化的方式讓你看出某個體的一整套染色體，被稱為karyotype
+![image alt](https://as1.ftcdn.net/v2/jpg/01/09/51/64/1000_F_109516465_sa6HJgV0yfbYyW5Nu8YzwOwebAkPAxwt.jpg)
+
+#### assignment of chromosome numbers
+- 通常會根據該染色體的物理特徵，給它一個特定的數字
+- 通常是根據染色體大小，從大到小分成1~22，因此，尺寸最大的染色體就是chr1
+
+### review: the cell cycle
+```mermaid
+timeline
+title the cell cycle
+  section interphase (20 hours)
+    G1 phase: cell growth & protein synthesis & pre-DNA synthesis : G1/S checkpoint
+    S phase: DNA synthesis
+    G2 phase : cell keep growing & post-DNA synthesis
+  
+  section mitotic phase or M phase (1 hours)
+    prophase : chromatin condenses
+    prometaphase: nuclear membrane breakdown
+    metaphase: form metaphase plate
+    anaphase: chromosome break at centromeres
+    telophase: nuclear membrane reforms\
+    
+  section cytolinesis
+    myosin II & actin filament ring contract: cleave cell in two
+
+  section interphase
+     the cycle restart : may enter Phase G0 : cell leaves cycle
+```
+- 主要分為兩期: 間期 (interphase) 跟細胞分裂期 (mitotic, or M phase)
+
+#### interphase
+- 大概佔了9成的時間，分為G1 phase、S phase、G2 phase
+  - G1: 著重在細胞生長跟胞器的複製
+  - S: DNA的複製，確保每個染色體都複製成兩個姊妹染色分體 (sister chromatids)
+  - G2: 合成未來細胞分裂所需的蛋白質 (例如tubulin或是紡錘體)
+- G0 phase: 屬於非增殖狀態，細胞分裂停止
+- 這些細胞進入G0期之後，可能等待時機再次進入細胞週期
+- 或是開始分化，形成有功能的細胞 (例如神經元)，不再進行分裂。這就是為何神經元或是心肌細胞受損很難再生的原因之一\
+
+#### mitotic phase
+- 分成兩個重點: 細胞核分裂 (mitosis/karyokineses) 跟細胞質分裂 (cytokinesis)
+
+##### stages of mitosis 
+
+|phase|description|
+|-----|-----------|
+|prophase 前期|染色質凝聚成染色體|
+|prometaphase 前中期|核膜開始消失，紡錘絲開始連結到著絲點上面|
+|metaphase 中期|姊妹染色分體被牽引，排列到赤道板 (或是被稱為metaphase plate) 上面，這個時候最好觀察karyotype|
+|anaphase 後期|姊妹染色分體分開，紡錘絲縮短|
+|telophase 末期|染色體到達兩極，重新變成絲狀的染色質，核膜重新生成|
+
+##### cytokinesis
+- 由myosin跟微絲形成的環組成。微絲會慢慢收縮，在原先赤道板的區域形成分裂溝，形成兩個細胞
+
+![image alt](https://images.squarespace-cdn.com/content/v1/5c5aed8434c4e20e953d6011/f85097f5-45ef-426e-8b79-ed0993fbb3c8/Stages%2Bof%2Bmitosis.jpeg)
