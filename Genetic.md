@@ -764,3 +764,119 @@ title the cell cycle
 - 由myosin跟微絲形成的環組成。微絲會慢慢收縮，在原先赤道板的區域形成分裂溝，形成兩個細胞
 
 ![image alt](https://images.squarespace-cdn.com/content/v1/5c5aed8434c4e20e953d6011/f85097f5-45ef-426e-8b79-ed0993fbb3c8/Stages%2Bof%2Bmitosis.jpeg)
+
+### ploidy
+
+- 通常代表染色體套數
+- haploid = 1套，diploid = 2套，以此類推。例如人單套為23條
+- 一些生物本身即為單套染色體，例如drone。有些為多套 (polyploid)，例如植物
+
+####  meiosis
+- 一種特殊的細胞分裂，通常用來產生gametes用的 (sperm and egg cells)
+```mermaid
+timeline
+ title Meiosis
+  section Meiosis I (reduction division)
+     homologous chromosomes pair: joined as tetrads
+     homologous chromosome separate: only the cohesin from the chromosome arms is degraded
+     2 cells form : homologous chromosome separate, but sister chromatids remain attached
+  section Meiosis II (equational division)
+     sister chromatids separate : new metaphase plate forms : centromere split
+     4 cells form : produce 4 gametes
+    
+```
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/1920px-Meiosis_Stages.svg.png)
+
+#### meiosis I
+- 同源染色體在prophase可能會接在一起，交換基因，增加後代的適應性。這現象被稱為homologous recombination
+- 同源染色體配對在一起的時候，被稱為染色體的聯會 (synapsis)
+- 染色體的交叉處被稱為**chiasma**
+- 這次發生的是**同源染色體的分離**
+
+#### prophase I: a closer look
+- 可以分為leptotene、zygotene、pachytene、diplotene跟diakinesis
+
+```mermaid
+timeline 
+ title Prophase I
+   leptonene 細線期: 染色體在顯微鏡<br>下第一次可見，<br>產生單鏈DNA細絲
+   zygotene 偶線期: synapsis出現，<br>同源染色體開始配對
+   pachytene 粗線期: 配對完成，染色體<br>也開始濃縮，姊妹<br>染色分體清晰可見
+   diplotene 雙線期: 染色體變成短棒狀，<br>cross over產生，<br>chiasmata形成，<br>聯會複合體解體，<br>同源染色體彼此<br>略微分開
+   diakinesis 終變期: 四分體的四個部分<br>實際可見，交叉點<br>清晰可見
+```
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/Chromosomal_synapsis_prophase_I_0309.png)
+
+#### meiosis II
+- 這次是換成**姊妹染色分體分開**
+- 整個過程 (prophase、metaphase、anaphase、telophase) 都很像是有絲分裂，但是裡面只有正常染色體的一半數量
+- 同時，剛才發生交叉互換的地方會被保留下來，增加了基因配子的多樣性
+
+### 動物的生命周期
+```mermaid
+flowchart TB
+
+classDef Me fill: #ffa34f, stroke: #c43838, stroke-width: 3px
+ subgraph Mitosis
+   direction LR
+   oe{**2n**, embryo starts<br> to develop}
+   oe-->|childbirth|oy(**2n**, childhood)
+   oy-->|growth|op(**2n**, puberty)
+   op-->mc[**2n**, meiocyte,<br> primary oocyte or<br> spermatocyte]
+ end
+ 
+   mc-->|anaphase I|n1(**n**, secondary oocyte)
+   mc-->|anaphase I|n2(**n**, the first<br> polar body form)
+   
+ subgraph Meiosis
+   direction LR
+   n1-->f[精卵相遇]
+   n2-.->d1((消失))
+   sn(**n**, sperm)-.->f
+   f-->|anaphase II|n3(**n**, ovum)
+   f-->|anaphase II|n4(**n**, the second<br> polar body form)
+   n4-.->d2((消失))
+ end
+ 
+ subgraph fertilization
+   n3-->nf(nuclear fusion)
+ end
+   nf-.->oe
+   
+ style Meiosis fill: #ffa34f, stroke: #c43838, stroke-width: 3px  
+ style Mitosis fill: #e2a9f1, stroke: #8c10ad, stroke-width: 3px
+ style fertilization fill: #2cd7dd, stroke: #2c6ddd, stroke-width: 3px
+```
+
+#### the fate of polar body
+- 卵子形成 (oogenesis) 為高度的細胞質不對稱 (astmmetric cytokikmneses)，大部分的細胞質都集中在一個子細胞上面
+- 策略是把有限的營養集中在唯一的卵子身上，確保受精卵有足夠的能量進行卵裂 (cleavage)
+- 人工授精時可以直接從極體去推測卵子是否以致命突變
+
+#### nondisjunction
+- 某些同源染色體或是姊妹染色體分離失敗造成的現象
+- 可能會造成配子多了一個染色體 (trisomy) 或是少了一個染色體 (monosomy)
+- 造成非整倍體現象 (aneuploidy)，如在人類身上為45或是47染色體，而非46條
+- 大部分胚胎會因此自然流產，少數才能存活至出生。如trisomy 21 (Down syndrome) 或是 trisomy 18 (Edwards syndrome)
+- 造成原因可能包含: 
+  - 紡錘體連接失敗就分裂
+  - Cohesion (固定姊妹染色分體) 出現異常
+  - 高齡產婦效應
+
+![image alt](https://bio1151.nicerweb.com/Locked/media/ch15/15_12Nondisjunction_L.jpg)
+
+### sex-chromosome inheritance
+- 果蠅有八條染色體，跟人類一樣，一對為性染色體 (X or Y)
+- 果蠅眼睛通常為紅色，屬於顯性 (基因 $w^+$ )，白眼 (基因 $w$ ) 為隱性
+- 影響果蠅眼睛顏色的染色體位於X染色體上面，因此，該基因屬於性聯遺傳
+
+#### other X-linked recessive disorders
+- 例如hemophilia (血友病)、色盲、Duchenne muscular dystrophy
+- 基本上，男性患者的兒子都沒什麼問題 (因為只會傳遞Y染色體，有問題的基因不會傳下去)，女兒則是carriers (因為為隱性遺傳疾病)，直到他的女兒生的子女，就會發現兒子一半正常，一半發病
+
+
+>[!Note] 八卦一下
+> 維多利亞女王為hemophilia A (F8基因，位於Xq28) 的carrier，她生了9個孩子，這些孩子之後都變成了其他歐洲國家的王子公主，後代遍布，也非常 "幸運" 的把hemophilia A的基因傳遍各地。Nicholas II兒子的血友病就是這樣得到的 🤣
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/Hemophilia_A_0309.png)
+
