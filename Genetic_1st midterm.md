@@ -1218,3 +1218,128 @@ $$y\cdots 7.5\ cM\cdots rb\cdots 6.2\ cM\cdots cv\quad \text{整體長度13.7cM}
 **因此答案有兩個可能解** 🐱
     
 </details>
+
+#### 如何做三點試交
+- 假如說我們有三對基因，父母分別為:
+
+$$ABC/abc\quad \text{and}\quad abc/abc$$
+
+- 沒有交換的話，就是 $ABC$ 或是 $abc$
+- 發生一次交換的話，有兩種情況:
+  - 發生在AB之間: $Abc$ 跟 $aBC$
+  - 發生在BC之間: $ABc$ 跟 $abC$
+- 發生兩次交換的話，那就是 $AbC$ 跟 $aBc$
+- 同時我們知道，沒有互換的wild type占最多，互換一次的占比其次，互換兩次的占比最低
+- 因此我們可以得出以下結論:
+
+$$
+\begin{align}
+& \text{wild type:} && ABC/abc,\ abc/abc\quad \text{占最多}\\
+& \text{single crossover:} && Abc/abc,\ aBC/abc,\ ABc/abc,\ abC/abc\quad\text{次之}\\
+& \text{double crossover:} && AbC/abc,\  aBc/abc\quad \text{最少}
+\end{align}
+$$
+
+- 由數量的計算就可以知道三個基因之間的遺傳圖譜
+> 直接進行計算看看吧~
+
+##### 栗子時間 🌰
+- 假如說我的基因型分別數量如下:
+
+|基因型|數量|屬於|
+|---|---|---|
+|ABC/abc|286|parental type|
+|aBC/abc|33|single crossover|
+|ABc/abc|59|single crossover|
+|AbC/abc|4|double crossover|
+|aBc/abc|2|double crossover|
+|abC/abc|44|single crossover|
+|Abc/abc|40|single crossover|
+|abc/abc|272|parental type|
+
+##### 1. 首先，我們先確定誰是雙重交叉，誰是親本型:
+- 親本型 (Parental types)
+  - ABC/abc = 286
+  - abc/abc = 272
+  - → 出現最多，確定是親本型
+- 雙重交叉型 (Double crossover types)
+  - AbC/abc = 4
+  - aBc/abc = 2
+  - → 出現最少，確定是雙重交叉型
+
+##### 2. 確定順序
+- 在雙交叉型裡，B的狀態改變，顯示B是中間基因。
+- 因此，正確順序為:
+
+$$A – B – C$$
+
+##### 3. 計算A-B距離
+- A–B 距離重組型包括：
+  - aBC (33)
+  - Abc (40)
+  - 雙交叉 (4+2=6)
+- 因此: 
+
+$$\frac{33+40+6}{740}\times 100\approx 10.7\ cM$$
+
+##### 4. 計算B-C距離
+- B–C 距離重組型包括：
+  - ABc (59)
+  - abC (44)
+  - 雙交叉 (4+2=6)
+- 因此:
+
+$$\frac{59+44+6}{740}\times 100\approx 14.7\ cM$$
+
+> [!Tip]
+> 記得在兩次測量時，雙互換的要重覆計算 🐱
+
+##### 5. 做結論
+- 將兩個答案都加起來，整個基因組就會像是:
+
+$$\boxed{A}\cdots 10.7\ cM\cdots \boxed{B} \cdots\cdots 14.7\ cM \cdots\cdots\boxed{C}$$
+
+```mermaid
+timeline
+title guide to three-point crosses 💪
+  Identify the parent: most common classes : 數量最多的<br>通常是親本型
+  Identify the double recombinant: rarest classes : 數量最少的<br>通常是雙互換型
+  Look for the gene in the middle: 找出哪一個基因<br>相對於另外兩個基因<br>改變了位置
+  Redraw the graph and assign simgle recombinant classes to regions: 模擬手繪出<br>相對位置
+  Calculate map distances: 加加減減計算<br>基因相對距離
+```
+
+#### 從剛才的例子來看看 genetic interference
+- 我們縣雙互換的情況 (double crossovers, DCO) 發生機率很低
+- 根據剛才算出來的交換率，A-B的交換率是0.107，B-C的交換率是0.147
+- 要是AB交換了，BC也交換了，假如它們的交換各自獨立，那麼DCO的發生機率應該就是:
+
+$$
+\begin{align}
+& 0.107\times 0.147=0.0157\\
+& \therefore 740\times 0.0157=11.6
+\end{align}
+$$
+
+- 但是實際上DCO只有6個，比預期還少，為什麼? 🤔
+> [!Note]
+> 因為! 互換其實並非完全獨立! 一個地方發生互換，**會對鄰近區域產生 "物理上的排斥"** ，使得在附近同時發生第二次交換變得困難 !!
+
+- 發生干涉的原因有很多種，可能是因為物理張力 (chiasma的剛性)、空間阻礙 (幫忙互換的蛋白質complex太大)
+- 通常接近著絲點或是端粒的區域，容易出現干涉
+
+
+#### 符合係數 coefficient of coincidence
+- 公式如下:
+
+$$\text{coefficient of coincidence}=\frac{reality\ DCO}{ideal\ DCO}$$
+
+- 例如，以上述例子而言，符合係數就是 $6\div 11.6=0.51$ ，而干擾係數 (interference, i) 就是 $1-0.51=0.49$
+- 根據干擾的程度，還可以分成四種情況: 
+
+|狀態|符合係數|干擾係數|代表|備註|
+|---|---|---|---|---|
+|No interference|1|0|兩次互換完全獨立，互不影響。||
+|Positive interference|0~1之間|0~1之間|正干涉，即第一次交換後，引起鄰近第二次交換的機會的**下降**|在生物界普遍存在|
+|Negative interference|大於1|負數|某處發生crossover，會增加另一處crossover的發生|有時僅在微生物中出現|
+|Complete interference|0|1|表示存在完全干涉，區域內絕對不會發生雙互換。||
