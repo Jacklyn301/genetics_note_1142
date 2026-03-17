@@ -513,11 +513,12 @@ timeline
 | $g^{CG}g^{CG}$ |⚪|⚪|🟡|🟡|
 
 #### 毛細管電泳偵測
-毛細管電泳偵測
 - 讓PCR產物帶有螢光標記，放進細長的毛細管中，利用電場讓DNA片段依大小移動。跟凝膠電泳一樣，小片段跑得快，大片段跑得慢
 - 儀器用雷射激發螢光，偵測片段通過的時間
 - 結果呈現：電腦會畫出峰圖 (electropherogram)，每個峰代表一個片段的大小。具體來說，就是一個橫軸為片段大小，縱軸為螢光強度的圖
 - 假如說，某STR位點出現兩個峰，表示此人有兩個不同長度的等位基因 (heterozygous)。如果只有一個波峰，那就是 homozygous
+
+![image](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/DNA_fingerprint_0317.png)
 
 ---
 
@@ -527,7 +528,7 @@ timeline
 - 發明hereditary factors (遺傳因子) 這詞，就是現在知道的gene
 - OG酷愛豌豆的原因:
   - 性狀明顯看得出來
-  - 好栽培，三個月就收成 (我的意思是生長週期短好做實驗)
+  - 好栽培，三個月就收成 (我的意思是... 生長週期短好做實驗 👀)
   - 自花授粉植物，品系穩定
   - 遺傳控制可以用異花人工授粉達成
 
@@ -540,7 +541,7 @@ timeline
 
 #### 種子到底為什麼皺縮
 - 種子的形狀由SBEI (澱粉分支酶) 基因控制，該基因用來合成澱粉
-- SBEI的基因突變 (轉作子插入基因導致功能下降)，導致澱粉合成異常
+- SBEI的基因突變 (轉座子插入基因導致功能下降)，導致澱粉合成異常
 - 正常種子能把糖轉成澱粉，保持飽滿圓滑。突變型因為SBEI功能缺失，澱粉量減少、糖分累積，乾燥時水分流失不均，種子皺縮。
 
 > [!Note]
@@ -549,15 +550,15 @@ timeline
 #### 單基因遺傳主要特徵
 - 基因成對出現 (兩個alleles)，可以兩兩相同 (homozygous)，或是兩兩不同 (heterozygous)
 - 一個配子形成時通常只攜帶一個allele，授精隨機發生，不同親代的allele重新配對
-- 這叫做**the principle of segregation**
+- 這叫做**the principle of segregation (分離率)**
 
 #### dihybrid expetiment
 - 可以用Punnett square (棋盤法) 來判斷基因型跟預測表現型，如果是dihybrid cross (兩性狀雜交，例如 $WW\ GG\times ww\ gg$ )，表現型在F2的比例將會是 **9:3:3:1**
 - 也就是說，在兩個性狀的遺傳因子下，會形成4種基因型配子 ( $WG,\ Wg,\ wG,\ wg$ )
-- 一個trait不會影響到另一個trait，這叫做**the principle of independent assortment**
+- 一個trait不會影響到另一個trait，這叫做**the principle of independent assortment (獨立分配率)**
 
 #### 家族譜系 
-- 可以用Pedigree diagram來分析，通常圖中會用不同的符號代表不同狀況 (一次讓你終生難忘 🙂)
+- 可以用**Pedigree diagram**來分析，通常圖中會用不同的符號代表不同狀況 (一次讓你終生難忘 🙂)
 
 ![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/pedigree_diagram_symbols_0307.png)
 
@@ -640,11 +641,11 @@ $$\frac{\text{表現出性狀的人數}}{\text{攜帶致病基因的人數}}\tim
 > 為什麼有些人會生病，有些人不會?
 
 - 環境因素: 不同的飲食或是生活習慣，或著是接觸的化學物質會影響
-- epistasis: 其他基因可能掩蓋主校基因的作用
+- epistasis: 其他基因可能掩蓋主效基因的作用
 - epigenetics: DNA可能被甲基化
 - age-dependency: 有些疾病需要年齡增長才會表現，又稱為延遲穿透
 
-#### the expreesivity
+#### the expressivity
 - 即使發病了，每個人的表現形嚴重程度也有所不同
 - 即使在同一個家族，攜帶同一個突變位點的成員之間，病情的輕重程度也有所不同。這叫做表現度的多樣性 (variable expressivity)
 - 例如Marfan syndrome (chr15的 *FBN1* 基因突變)，有些人可能只是表現出瘦長的身材，有些人會有嚴重的心血管併發症或是眼部問題
@@ -660,7 +661,7 @@ $$\frac{\text{表現出性狀的人數}}{\text{攜帶致病基因的人數}}\tim
 #### 表現型、基因型跟環境
 - 就算基因型相同，不同環境條件下也可能會有不同表現型:
 
-$$phenotype=genotype + environmental factors$$
+$$phenotype=genotype + environmental\ factors$$
 
 - 例如物種*Ranunculus aquatilis*，即使是同一株植物，水面下葉片 (絲狀) 跟水面上葉片 (掌狀) 就不一樣
 - 喜瑪拉雅兔在體溫低的肢端長出黑毛，在體溫高的身體核心區域長出白毛 (因為調控黑色素的酵素tyrosinase只會在低溫下正常運作)
@@ -678,8 +679,7 @@ $$phenotype=genotype + environmental factors$$
 > 其實粒線體也可能會移傳自父親! 一個[發表在PNAS期刊上的研究](https://www.pnas.org/doi/full/10.1073/pnas.1810946115)發現一些患有粒線體疾病的病人 (症狀包含疲勞、肌張力低下、肌肉疼痛及眼瞼下垂等等)，它們有來自雙親的粒線體 😮
 
 #### mosaicism
-- 一個個體出現多個基因型: 同一個個體中，存在兩種或兩
-種以上具有不同基因型的細胞群
+- 一個個體出現多個基因型: 同一個個體中，存在兩種或兩種以上具有不同基因型的細胞群
 - 通常是因為胚胎發育過程中，單一細胞發生突變，且僅將該突變傳給自己的子細胞導致的現象
 - 通常mosacism分成兩種: germline跟somatic類型
 
@@ -866,7 +866,7 @@ classDef Me fill: #ffa34f, stroke: #c43838, stroke-width: 3px
 ```
 
 #### the fate of polar body
-- 卵子形成 (oogenesis) 為高度的細胞質不對稱 (astmmetric cytokikmneses)，大部分的細胞質都集中在一個子細胞上面
+- 卵子形成 (oogenesis) 為高度的細胞質不對稱 (asymmetric cytokinesis)，大部分的細胞質都集中在一個子細胞上面
 - 策略是把有限的營養集中在唯一的卵子身上，確保受精卵有足夠的能量進行卵裂 (cleavage)
 - 人工授精時可以直接從極體去推測卵子是否以致命突變
 
@@ -934,7 +934,7 @@ classDef Me fill: #ffa34f, stroke: #c43838, stroke-width: 3px
 #### other animals examples
 ##### chicken: Z-W inheritance
 - 公雞的性染色體是 $ZZ$ ，母雞的是 $ZW$ ，卵子決定後代性別
-- 雞的 "條紋羽毛雞因" (讓白毛雞變成條紋雞)，位於Z染色體
+- 雞的 "條紋羽毛基因" (讓白毛雞變成條紋雞)，位於Z染色體
 ##### examples of Z-W organisms
 - 除了雞之外，還包含:
   - 鳥類 (大多數)
@@ -947,29 +947,29 @@ classDef Me fill: #ffa34f, stroke: #c43838, stroke-width: 3px
 
 ## chapter 5
 ### indepedent assortment
-- 形成配子時，一對基因的分離，對另一個雞因沒有影響
+- 形成配子時，一對基因的分離，對另一個基因沒有影響
 - 非對偶基因任意組合至同一個配子中
 
 ### 違反孟德爾遺傳的基因定率
 #### genetic linkage
 - 基因連鎖: 兩個基因基本上在同一個染色體上，且距離非常近
 - 一條染色體上所有的基因組成一個連鎖群，並且不符合獨立分配率
-- 理論上，連鎖基因是憶起行動且不可以獨立分配的，但實際上可能發生基因重組 (gene recombination)
+- 理論上，連鎖基因是一起行動且不可以獨立分配的，但實際上可能發生基因重組 (gene recombination)
 
 #### gene recombment
 - 在prophase I，同源染色體之間會發生片段交換
-- 如果兩個基因的距離很遠 (在同一條染色體的情況下)，發生重組的機率較高，使它們他表現就像是獨立分配
+- 如果兩個基因的距離很遠 (在同一條染色體的情況下)，發生重組的機率較高，使它們表現就像是獨立分配
 
-#### Morgam and recombination
+#### Morgan and recombination
 - 提出基因連鎖，交叉、互換等等的概念，讓他得到1933諾貝爾獎
 - 交叉在prophase 1發生，同源染色體在一起產生聯會 (synapses)，形成交叉點處被稱為chiasmata
 
 ### 概念深入
 #### parental vs recombinant types
-- 親代型代表沒有發生互換的樣態。重組型代表有發生互換的樣態，通常，產生revombinant types 的機率比出出現parental type的還要少
+- 親代型代表沒有發生互換的樣態。重組型代表有發生互換的樣態，通常，產生recombinant types 的機率比出現parental type的還要少
 - 互換率: 發生互換的配子數，跟所有配子數的比例
 
-$$recombinition\ frequency=\frac{number\ of\ recombinant\ gamates}{total\ gamate}$$
+$$recombination\ frequency=\frac{number\ of\ recombinant\ gamates}{total\ gamate}$$
 
 - 基因的互換率，跟兩個基因的物理距離成正比
 - 兩基因在染色體上的距離愈遠，中間發生互換的機率就愈大
@@ -1020,10 +1020,10 @@ $$\text{互換率}=\frac{133+137}{371+359+133+137}=0.27$$
 > [!Note] 
 > 互換率最高就是50% 🐱
 
-#### recombnation frequency (r)
+#### recombnation frequency
 - 意旨兩個基因會互換的機率
 - r通常在0跟0.5之間徘迴
-   - 如果r=0，兩個基因基本上完全連鎖，這兩個loci基本上很近，不會有家互換的機會發生，總是做為一個整體來傳承給他人
+   - 如果r=0，兩個基因基本上完全連鎖，這兩個loci基本上很近，不會有互換的機會發生，總是做為一個整體來傳承給他人
    - 如果r=0.5，這兩個基因並不連鎖，或是他們根本不是同一個染色體上面。如果兩個基因在同一個染色體但是距離很遠，它們的互換程度會高到像是獨立分配一樣。再記得一次:
 
 $$r\le 0.5\quad\Rightarrow \text{loci are linked at r}$$
@@ -1074,7 +1074,8 @@ $$\begin{align}
 - 共線基因 = 在同一個染色體上的基因
 - 連鎖基因 = 共線基因位置足夠靠近，以至於它們傾向於一起遺傳，互換率明顯低於50%
 > [!Note]
-> 要是兩個基因的 $r=0.5\rightarrow$ 基因物理上共線，但是不連鎖
+> - 要是兩個基因的 $r=0.5\rightarrow$ 基因物理上共線，但是不連鎖
+> - **連鎖基因一定是共線基因，但是共線基因不一定連鎖 !!**
 
 #### locus and genetic mapping
 - locus (loci) = 基因在染色體上面的住址。相對應的基因座會攜帶相同或是不同的alleles
@@ -1130,7 +1131,7 @@ $$\begin{align}
 
 #### 到底如何從attached-X知道染色體的間差是在什麼時發生?
 - 首先我們知道，attached-X是不會有所謂的二次減數分裂的，因為它們同源染色體本來就是兩兩不分離的存在
-- 因此，問題就是，到底交叉是在prophase I之前發生，還是prophase 2之前發生?
+- 因此，問題就是，到底交叉是在染色體複製前，還是複製後發生?
 > 讓我們來思想實驗一下... 🐱
 
 ```mermaid
@@ -1203,7 +1204,7 @@ $$(\frac{1}{4}\cdot 0)+(\frac{1}{2}\cdot 2)+(\frac{1}{4}\cdot 4)=2$$
 $$\text{重組頻率}=2\div 4=0.5 (\text{已經是最大值})$$
 
 >[!Important]
->在多次互換的情況下，其遺傳表現就跟獨立分配率幾乎無異了 ! 😮
+>在多次互換的情況下，**其遺傳表現就跟獨立分配率幾乎無異了** 😮
 
 ##### 染色分體干擾
 - 如果第一次互換影響到了第二次互換選擇染色分體的對象，這就叫做**染色分體干擾**，也就出現所謂的 "非隨機性"
@@ -1324,7 +1325,7 @@ title guide to three-point crosses 💪
 ```
 
 #### 從剛才的例子來看看 genetic interference
-- 我們縣雙互換的情況 (double crossovers, DCO) 發生機率很低
+- 我們發現雙互換的情況 (double crossovers, DCO) 發生機率很低
 - 根據剛才算出來的交換率，A-B的交換率是0.107，B-C的交換率是0.147
 - 要是AB交換了，BC也交換了，假如它們的交換各自獨立，那麼DCO的發生機率應該就是:
 
@@ -1361,11 +1362,11 @@ $$\text{coefficient of coincidence}=\frac{reality\ DCO}{ideal\ DCO}$$
 #### 重組頻率跟遺傳距離的關係
 - 可以化成一個函數圖形 (genetic map function)
 - 遺傳距離為x，重組頻率為r
-- 假如說是一般完全干擾的，那麼重組率基本上完全等於遺傳距離 (也就是，基因的互換最多只能發生一次)
+- 假如說是一般完全干擾的，那麼重組率基本上完全等於遺傳距離 (也就是，基因的互換最多只能發生一次，不會發生雙互換)
 - 當干擾係數增加，產生多次互換的機率變高，重組率不一定等於遺傳距離
 - 因此在圖形上，完全干涉 ( $i=1$ ) 的圖形是一條45度的直線，無干涉的圖形 ( $i=0$ ) 會產生一條無限接近 $r=0.5$ 的漸近線
-- 多數生物的實際圖形床是位於兩者之間 ( $0<i<1$ )
-- 圖形上，無論i等於多少，在短距離內 (通常是 $<15\ cM$ )，發生雙互換的機率極低，所以 $r\approx x$ 
+- 多數生物的實際圖形長相是位於兩者之間 ( $0<i<1$ )
+- 圖形上，無論 $i$ 等於多少，在短距離內 (通常是 $<15\ cM$ )，發生雙互換的機率極低，所以 $r\approx x$ 
 
 ![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/genetic_mapping_0315.png)
 
@@ -1391,7 +1392,7 @@ $$\text{coefficient of coincidence}=\frac{reality\ DCO}{ideal\ DCO}$$
 - 通常有三個特徵:
   - 需要多代的資料
   - 對於單基因、高穿透率的疾病最有效
-  - 根據基因位置尋找基因，事先並不知道基因具體的致病機制
+  - 根據標記物位置尋找基因，事先並不知道基因具體的致病機制
 > [!Tip]
 > 連鎖分析的基本概念:
 > 估計互換率並進行統計，擬定出一個特定值: **LOD (log of odds)**
@@ -1459,9 +1460,9 @@ $$\frac{1+1}{1+1+3+3}=0.25$$
 $$LOD(\theta) = \log_{10}\left(\frac{P(\text{觀察到的資料 | 連鎖假設，重組率 = }\theta)}{P(\text{觀察到的資料 | 無連鎖假設，重組率 = 0.5})}\right)$$
 
 - 接下來我們比較兩個可能性，也就是該宮是的分子跟分母:
-  - 分子: 假設I: 致病基因跟該標記連鎖，但是有r的互換機率
+  - 分子: 假設I: 致病基因跟該標記連鎖，但是有 $r=0.25$ 的互換機率
   - 分母: 假設II: 它們不連鎖，獨立分配 (r=0.5)
-- 然後就來算二項分配 (想哭):
+- 然後就來算二項分配 (想哭 😭):
 - 假設I的狀況如下:
 
 $$P\text{{Pedigree | r=0.25}}=\frac{8!}{2!6!} (0.25)^2(0.75)^6=0.311$$
