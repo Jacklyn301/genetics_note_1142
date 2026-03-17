@@ -251,8 +251,10 @@ title Evolution of Reference Human Genome
 - 或著是重組，例如倒位、易位、插入等等
 
 ##### 染色體數異常
-- 通常是非整倍體，例如唐氏症 (trisomy 21)，或著是透納症 (45, X)
+- 通常是非整倍體
 - 如果是多倍體，通常會在發育時即出現問題，無法存活，例如Hydatidiform Mole (不完全的通常是三套染色體)
+- 最有名的就是trisomy 21 (Down syndrome)，當然還有trisomy 13、trisomy 18 (Edwards syndrome)、47, XXY (Klinefelter syndrome)、45, X (Turner syndrome)
+
 
 #### 深入介紹: SNP
 - 人類基因組中大概有8470萬個SNP (根據千人基因組計畫)，例如:
@@ -366,14 +368,25 @@ $$
 \end{align}
 $$
 
-- 最有名的就是trisomy 21 (Down syndrome)，當然還有trisomy 13、trisomy 18、47, XXY (Klinefelter syndrome)、45, X (Turner syndrome)
+|SV類型|代表疾病|
+|---|---|
+|缺失 (Deletion)|DiGeorge syndrome (22q11.2 deletion)：心臟畸形、免疫缺陷、顱顏異常|
+|重複 (Duplication)|Charcot–Marie–Tooth disease type 1A：PMP22 基因重複，造成周邊神經病變|
+|倒位 (Inversion)|血友病 A：F8 基因倒位導致凝血因子缺陷|
+|易位 (Translocation)|慢性骨髓性白血病 (CML)：費城染色體 t(9;22)，形成 BCR-ABL 融合基因|
+
 
 #### 深入介紹: 串聯重複序列 (Tandem Repeats)
 - 這些重複序列直接相鄰串在一起
 - 不同個體重複次數不同，又稱為VNTR
 - 可以是tri-nucleotide、penta-nucleotide、hexa-nucleotide等等
-- 這些重複序列在世世代代傳遞過程中，可能會重複序列增加，當增加到一定的數量時就會發病
-- 通常這些併會影響到神經系統居多
+- 根據重複單位長度，可以分成:
+  - Microsatellite / STR ：重複單位 2–6 bp
+  - Minisatellite：重複單位 10–60 bp
+  - Satellite DNA：更長的重複單位，常見於著絲粒或端粒 
+- 這些重複序列在世世代代傳遞過程中，可能會重複序列增加
+- 有些repeat增加到一定的數量時就會發病
+- 通常這些病會影響到神經系統居多
 
 ##### poly-Q
 - 外顯子區重複出現的CAG序列
