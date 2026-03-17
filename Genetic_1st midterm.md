@@ -496,7 +496,7 @@ timeline
 
 > [!Note]
 > 舉個栗子 🌰
-> - 我可以把一個基因的probe放到已經複製凝聚的染色體上面。要是一對色體 發出螢光的位置不同，那就是發生了translocation
+> - 我可以把一個基因的probe放到已經複製凝聚的染色體上面。要是一對染色體發出螢光的位置不同，那就是發生了translocation
 > - 要是一個染色體只出現一個螢光點 (按理來說複製了就該有兩個螢光點)，就說明發生了deletion
 
 ![image alt](https://www.genome.gov/sites/default/files/inline-images/FISH_Fact-sheet2020.jpg)
