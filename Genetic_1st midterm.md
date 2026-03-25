@@ -1589,3 +1589,76 @@ $$
 |less common variant|圖表中央|中等程度效應值，頻率在0.005~0.05之間|Crohn's disease|NOD2|
 
 ![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/Spectrum-of-Disease-Allele-Effects-Disease-associations-are-often-conceptualized-in-two_0315.webp)
+
+---
+
+## chapter 7
+### gene, enviroment and trait
+- 表徵通常可以被描述成單基因型 (monogenetic，由單一基因控制) 或是多基因型 (polygenetic，由多個基因控制)
+- 這兩種都能因為基因-環境交互作用，而產生影響
+- 具體來說，人的特性可以畫成一個三角形，三個腳分別為單基因、多基因、環境
+- 基本上，多數特性都是落在三角形的中間處，很少特性是僅受到單一的角影響的
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/the_spectrum_of_characters_0325.png)
+
+#### 質量性狀跟數量性狀 (qualitative and quantitative trait)
+- 質量性狀通常是由單一基因影響，產生的表徵往往呈現出 "全有全無率"，這些表現型通常呈現離散的樣貌，呈現基因型跟表現型之間 "一對一" 的關係
+- 數量性狀是由許多基因共同作用引起，表現型往往呈現連續的常態分布，表現型是在數量上呈現出不同，類型不變，而且受到多個基因和環境交互作用的影響很大
+
+|trait|qualitative|quantitative|
+|-----|-----------|------------|
+|基因|通常是單基因|通常是多基因|
+|特性|全有全無率，離散數據|常態分佈，連續數據|
+|關係|基因跟表徵，一對一|受環境跟基因的多因素影響|
+|舉例|孟德爾的豌豆花色|身高、膚色、體重、智力|
+
+- 在任何單一基因上面，確實表現出了孟德爾的定律，但是因為他們會共同作用，導致表現型往往很複雜，一些特點包含: 
+  - codominant: 每個等位基因對表現型的貢獻是一樣的
+  - minor gene: 每個基因的貢獻量都非常小
+  - additive effect: 基因的累積會決定最終的性狀樣貌
+- 還有一些進階的特性，例如:
+  - non-identical input: 各種基因對一種性狀的貢獻權重不一樣 
+  - epistasis: 上位基因會掩蓋掉其他基因的作用
+  - synergistic effect: 某些基因組合有偕同放大的作用 (1+1>2)
+
+#### 透過圖表感受基因的類型
+- 假如說某種性狀僅由一種基因控制 (例如豌豆種子的含油量)，並且將豌豆高度呈現於X軸，Y軸為個體數量: 
+  - 親代會呈現出兩個分佈的峰 ( $SS\times ss$ )
+  - 第一子代呈現出單峰 (皆為 $Ss$ )
+  - 第二子代呈現出三峰，1:2:1的比例分佈 ( $SS$ 、 $Ss$ 、 $ss$ )
+  - 整體皆呈現不連續 (discrete) 的樣貌
+- 當基因數量增加時，子代的分佈會出現變化
+  - 1 gene, 2 allele: 呈現三個峰
+  - 2 genes, each with 2 alleles: 呈現五個峰
+  - 3 genes, each with 2 alleles: 呈現七個峰，以此類推
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/phenotype_distribution_0325.png)
+
+#### 複習: 常態分佈的特性
+> 對我們又回來複習統計了，驚喜吧 🙂
+
+- 在計算的時候，總體平均數是根據總體樣本平均數估計得出，而樣本變異數要記得自由度為 $N-1$ :
+
+$$
+\begin{align}
+& \bar{x}=\frac{\sum f_i x_i}{N} && s^2=\frac{\sum f_i(x_i-\bar{x})^2}{N-1}
+\end{align}
+$$
+
+- 在分佈中，曲線下的特定區域面積，代表群體中具有該表型範圍各地比例，變異數 $\simga^2$ 能夠衡量該分佈的離散程度，通常:
+   - $\mu\pm \sigma$ : 68%
+   - $\mu\pm 2\sigma$ : 95%
+   - $\mu\pm 3\sigma$ : 99.7%
+- $\simga^2$ 小，整體分佈高瘦，反之
+
+#### 多基因性狀中的 "不連續表型"
+- 有些疾病看似是不連續，好像是單基因的疾病 (也就是要麼有病要麼沒病)，但是其根本原因其實是多基因跟多種因素影響 (無論是基因還是環境)
+- 這就跟所謂的threshold/liability model (易患型門檻模型) 有關係
+- 我們將影響該疾病發生的所有因素 (無論是基因還是環境) 統稱為liability (易患性)，liability代表著該個體罹患該疾病的風險
+- 所有個體的liability集結成一個連續變異，橫軸為liability，縱軸為頻率
+- 曲線的右側有一個門檻值，超過這個門檻，也就是liability高到一定程度的個體，才會患病
+- 不同族群的分布 (例如不同地區的族群) 會有所不同，但是門檻值都是一樣的
+- 如果是在一般的人群中，超過門檻值的比例被稱為population incident，如果是在家族中，就被稱為familial incident
+- 通常familial incident > population incident (所以家族的整體曲線分佈相對於一般人群，會更往右偏移) 
+
+
