@@ -1991,3 +1991,5 @@ D --> E
 #### 基因流動
 - 長期的族群隔離，會導致其遺傳分化的累積，但是只要有少數的基因流入，就能夠打破這種隔離，這被稱為gene flow
 - 通常是遷移 (migration) 或是通婚 (intermarriage) 導致的結果
+
+![image alt](https://cms-media.bartleby.com/wp-content/uploads/sites/2/2021/06/12090353/Gene-flow-2.png)
