@@ -1,5 +1,6 @@
 ---
-title: genetic_mid2_1142
+
+title: Genetic_1142_2nd_midterm
 
 ---
 
