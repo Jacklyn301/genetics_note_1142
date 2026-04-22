@@ -42,6 +42,7 @@ title: Genetic_1142_2nd_midterm
 - 帶有 tra 基因（transfer genes），能編碼形成性菌毛(sex pilus) 的蛋白質
 - 可以主動進行接合，把質體複製並傳送到另一個細菌
 - 例如F plasmid (fertility plasmid)
+
 ![image alt](https://i1.wp.com/cms.jackwestin.com/wp-content/uploads/2020/03/Bacteria-Conjugation.jpg?resize=572%2C600&ssl=1)
 
 ##### non-conjugative plasmids
