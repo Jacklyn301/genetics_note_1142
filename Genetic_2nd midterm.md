@@ -43,6 +43,7 @@ title: Genetic_1142_2nd_midterm
 - 可以主動進行接合，把質體複製並傳送到另一個細菌
 - 例如F plasmid (fertility plasmid)
 ![image alt](https://i1.wp.com/cms.jackwestin.com/wp-content/uploads/2020/03/Bacteria-Conjugation.jpg?resize=572%2C600&ssl=1)
+
 ##### non-conjugative plasmids
 - 缺乏 tra 基因，不能自行進行接合，只能在細胞分裂時隨染色體一起分配，或依靠其他 conjugative plasmid 的幫助
 - 如果兩種質體整合在一起，可以形成co-integrate，促進他們在細胞跟細胞之間的傳播
@@ -68,7 +69,7 @@ title: Genetic_1142_2nd_midterm
 - 大約146個鹼基對的DNA會繞在組蛋白八聚體上，形成2.5圈
 - DNA + 組蛋白八聚體的結構就是核小體，是染色質的基本單位
 
-![image alt](https://files.mtstatic.com/site_4463/100365/0?Expires=1776752570&Signature=TnjBzNyHh8z0sJ~a7rE8TfBDUifyzGYnxwzsXIjlwKJ49npUpMBa6KsaRyIhE4n0Z~hvaKiAIXo87BNo2r6b-XL7SRy2js-FOMlaUOiDriFbyECigQn42GBucpEalAaP8ZbBBAsYT7qDpTiXVCFpYfkb9ulutcpkX0rGuw6murU_&Key-Pair-Id=APKAJ5Y6AV4GI7A555NA)
+![image alt](https://www.mbi.nus.edu.sg/wp-content/uploads/2023/11/nucleosome-DNA-packaging.jpg)
 
 #### Linear looping
 - 在更高階層，核小體會進一步折疊成30 nm的染色質纖維
@@ -134,11 +135,13 @@ $$
 - 小基因組或重複序列多 → 容易找到互補股 → 曲線左移 (再複性快)
 - 大基因組或序列複雜 → 難找到互補股 → 曲線右移 (再複性慢)
 ![image alt](https://image1.slideserve.com/2115274/genome-composition-dna-re-association-kinetics-l.jpg)
+
 - 在複雜基因組（如哺乳動物 DNA）的 C₀t 曲線上，常可分成三段: 
    - 快速再複性區: 重複序列
    - 中速區: 中度重複序列
    - 慢速區: 單拷貝序列
 ![image alt](https://image1.slideserve.com/2115274/slide8-l.jpg)
+
 - 快速再複性區通常常見於異染色質 (例如端粒或是著絲粒)，它們基本上不轉錄，而且在prophase時比真染色質濃縮
 - 而中速區的DNA大部分就是轉座子
 ### 真核生物染色體其他構造
@@ -252,8 +255,8 @@ stateDiagram-v2
 #### $\theta$ 型複製
 - 複製時會形成兩個複製叉 (replication fork)，同時複製期間DNA排列方式看起來像是 $\theta$ 型
 - 複製的時候，尚未複製的親代DNA依然保持連結，只有在聚合酶要到達該處的時候才會分開
-
 ![image alt](https://www.onlinebiologynotes.com/wp-content/uploads/2017/06/DNA-relpication-termination-in-prokaryotes.jpg)
+
 - 環狀 DNA 的複製可以分成單方向 (unidirectional) 和雙方向 (bidirectional) 兩種模式，這取決於起始點的設計與複製機制: 
 
 ##### 🧬 單方向複製 (Unidirectional replication)
@@ -291,9 +294,11 @@ stateDiagram-v2
 - 主要合成DNA的酵素叫做**DNA pol III**
   - 利用dNTP，並且在切除前先**切出焦磷酸鹽 (PPi)**，再接上合成股3'，中間由磷酸二酯鍵 (phosphodiester bond, O-P bond) 連接
 ![image alt](https://benbest.com/lifeext/DNAstrnd.gif)
+
   - 在轉錄的時候如果出錯，會用exocnulease修補回來。尤其是當合成股不小心接錯的時候，會用**3'→5' 外切酶活性**
   - 這種狀況被稱為校正機制 (proofreading mechanism)
 ![image alt](https://caiherang.com/wp-content/uploads/2020/03/Proses-Editing-oleh-DNA-Polimerase-862x446.jpg)
+
 - **topoiosomerase II** (幫助雙股解旋)
 - **SSB protein** (單股結合蛋白) 是避免分開但尚未複製的單股DNA再次結合
 - 合成酶是5' 到 3'合成 (但模板股是3'到5')
@@ -694,7 +699,7 @@ flowchart LR
 #### UV light
 - 導致兩個相鄰的T (thymine dimer) 形成共價鍵結，使DNA翹起來 (distortion)
 
-![image alt](https://files.mtstatic.com/site_4539/12258/0?Expires=1776790114&Signature=qUwABT9AQZwV95FdWgZNnd0xpjluvHVQIbsBDSTZvFTItkFkge9BldR0GVLTEJ2tk62pIgcd8BYfZiBdRF2fWisc6Dnc486tEBObZhMqlWlZnb3evtk86E6j6PKobK7EIl9qsbuocVXlMqDVyce1c5DtaUmtJgcaKZHUsHLmETI_&Key-Pair-Id=APKAJ5Y6AV4GI7A555NA)
+![image alt](https://s3.amazonaws.com/s3.timetoast.com/public/uploads/photo/12391382/image/a474dd8847b47d384946681f4f160f62)
 
 #### X-ray
 - 在很寬的X射線劑量範圍中，X射線誘發的突變跟輻射劑量成正比
