@@ -360,3 +360,235 @@ classDef A fill: #aeff8b, stroke: #4e8337,stroke-width:2px,color:#000
 | **Haploid (n)** | 指一個物種的**配子染色體數目**，也就是 "基本套數" | 在二倍體生物中，配子是haploid | 人類: n = 23 (sperms or eggs) |
 | **Monoploid (x)** | 指一個物種的 **基本染色體組 (basic set)**，不管它平常是二倍體、多倍體。 | 在多倍體生物中，monoploid 是「最小單位」。 | 小麥: hexaploid (6x)，但monoploid數目是x = 7。 |
 
+---
+
+## ch19
+- 基因表現的控制點可以透過以下來調控: 
+  - 控制起始跟終止
+  - 對轉錄出的RNA進行加工
+  - 多肽合成的速度跟量的控制
+  - mRNA的穩定度
+  - 轉譯後修飾
+  - DNA的重排
+### 原核生物的調控方法
+- 通常由轉錄來控制，當需要基因產物時，基因開啟；在其他情況下，轉錄偏向關閉
+- 在原核跟真核生物中都有類似的 "開啟-關閉" 機制
+
+> [!Important]
+> 關閉基因 $\ne$ 沒有產物，通常是該基因還有作用，而產物維持在一個極低的水平。即使如此，我們依然會說該基因處於關閉狀態 🐱
+
+- 同一個路徑上相關的酵素，細菌要麼都產生，要麼都不產生，但真核生物不存在這種調控機制
+  - 在細菌裡，同一路徑上的相關酵素基因常常被排在一起，形成一個 operon，共用一個啟動子 (promoter) 和調控區
+  - 在真核生物裡，同一路徑的基因通常分散在不同染色體上，不會像細菌那樣排成一個operon
+
+#### 在負調控機制中
+- 在negative regulation中，基因被預設為 "開啟"，會持續高速轉錄
+- 負調控系統可以是誘導型，也可以是抑制型的
+##### 誘導型 (inducible transcription)
+- repressor蛋白質會使轉錄 "關閉"
+- 當底物跟repressor結合時，repressor會無法跟DNA結合，使該基因無法被關閉 (aka 開啟)
+- 因此此時底物又被稱為inducer (誘導物)
+- 許多生物分解途徑屬於這一種，並以降解的東西 (也就是受質) 作為誘導物
+
+> [!Tip]
+> - inducer 出現 → repressor蛋白構型改變 → repressor無法結合DNA → 轉錄進行 🐱
+> - 底物通常就是誘導物，所以底物出現，該基因才會高速轉錄
+
+##### 抑制型 (repressible transcription)
+- repressor在底物沒有出現時，是沒有活性的，這時它也被稱為aporepressor
+- 當底物跟repressor結合時，repressor活性才會出現，阻止基因繼續開啟
+- 這時的底物又被稱為corepressor (共同抑制物)
+- 常見於生物合成，在生物合成時，產物本身就是共同抑制物，會反向抑制自己的生成
+
+> [!Tip]
+> - corepressor出現 → repressor蛋白構型改變 → repressor可結合DNA → 轉錄停止 🐱
+> - 生成物通常就是共同抑制物，所以生成物出現，該基因才會關閉
+
+![image alt](https://archive.nptel.ac.in/content/storage2/courses/102103015/module7/lec5/images/2.png)
+
+#### 在正調控機制中
+- 在負調控系統中，轉錄的預設屬於 "開啟" 模式，那正調控系統的轉錄預設模式就是 "關閉"，它需要與調控蛋白結合才可以招募RNA合成酶
+
+> [!Note]
+> 負調控常見於原核生物，正調控常見於真核生物 🤔
+
+##### 自調控現象
+- autoregulation就是指 "該基因的產物可以反過來調控自己" 
+  - 在negative autoregulation中，蛋白質會抑制自己的轉錄，高濃度的蛋白質會減少mRNA的產量
+  - 在positive autoregulation中，蛋白質會刺激自己基因的轉錄，並且透過這個方式達到轉錄速度的最大值
+
+#### 隨機噪音的問題
+- 首先我們知道，基因的調控是多層的，但是並沒有絕對精準非黑即白的控制，因為在分子層級傳遞訊息，噪音 (noise) 會常常出現
+- 簡單來說，即使在相同環境下，細胞之間或同一細胞不同時間，基因表達量會有差異，基因的調控有一定的隨機性
+
+##### 🎚️ 數量少 → 噪音大
+- 例如，如果只有5個分子在細胞裡，少掉1個訊號強度就差了20%；而如果有500個，少掉1個只差0.2%
+- 這種 "小數量效應" 會導致基因表達呈現 跳動式 (burst-like)，有時候突然開啟、有時候突然關閉
+
+> 這他媽讓我想到話雙倒數曲線時底物濃度太低造成的誤差... 🙂
+
+##### 📉 數量多 → 噪音小
+- 當調控分子數量很多時，隨機波動的比例就被平均掉，結果是基因表達比較穩定，細胞之間差異較小
+
+> [!Note]
+> 欲降低雜訊水平 $x$ 倍，需要增加調控分子數量至 $x^4$ 倍 🤔
+
+### 操作子
+#### 突變體的實驗
+- 在E.coli中，乳糖代謝需要用到 $\beta$ -半乳糖甘酶 ( $\beta$ -galactosidase，裂解乳糖雙糖成為單糖)，以及乳糖滲透酶 (lactose permease，使乳糖能進入細胞)
+- 前者的編碼基因叫做lacZ，後者的編碼基因叫做lacY
+- 而突變體 $lac^-$ 就是指無法利用乳糖的細菌們，這些細菌要麼是lacZ出問題，要麼是lacY出問題
+- 從分析mRNA的表現量來看可以發現，在沒有加入乳糖時， $lac$ mRNA濃度幾乎為零，而在加入乳糖時迅速增加
+- 同時， $lac$ mRNA濃度增加時，相繼的  $\beta$ -galactosidase跟lactose permease的濃度也一起增加
+- 這基本上可以推測，兩個基因lacZ跟lacY是幾乎一起轉錄的
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/lac_mRNA_concentration_and_lacZ_lacY_expression_0508.png)
+
+- 同時也可以確定，lac mRNA對應的基因是個誘導型的操作子，而乳糖或是某些乳糖的類似物 (如IPTG，isopropylthiogalactoside) 屬於誘導物
+
+#### 抑制子、啟動子跟促進子
+- 以下有幾種不同的突變型，大家可以稍微記一下
+  - $lacI^-$ : lacI基因表達出該操作組的repressor， $lacI^-$ 代表該蛋白質無法被轉錄，operon會持續被轉錄，隱性遺傳
+  - $lacI^s$ : 有lacI蛋白，但是該蛋白不會在誘導物出現時才失活促進轉譯，而是無法辨識誘導物，導致即使誘導物出現，operon也無法轉錄，顯性遺傳
+  - $lacO^c$ : 突變區域是operon的啟動子 (operator)，突變會使抑制子無法結合上來，導致基因一直開啟
+ 
+> [!Note]
+> ##### cis-dominant
+> - 即使有正常的lacO在另一條DNA上，突變的 $lacO^c$ 還是會主導它所在的operon表達
+> - 因為 operator是一個DNA上的結合位點，它的功能只限於 "它旁邊的基因" ，跟其他染色體毫無關係 🤔
+
+| # |基因型 | 產生lacZ⁺ mRNA的壯況 | operon的表現量 |
+|----|-----------------------------------|--------------------------|---------------|
+| 1  | F' lacOᶜ lacZ⁺ / lacO⁺ lacZ⁺      |  停不下來  | +             |
+| 2  | F' lacO⁺ lacZ⁺ / lacOᶜ lacZ⁺      |  停不下來  | +             |
+| 3  | F' lacI⁻ lacZ⁺ / lacI⁺ lacZ⁺      |  正常狀況  | +             |
+| 4  | F' lacI⁺ lacZ⁺ / lacI⁻ lacZ⁺      |  正常狀況  | +             |
+| 5  | F' lacOᶜ lacZ⁻ / lacO⁺ lacZ⁺      | 正常狀況 | +             |
+| 6  | F' lacOᶜ lacZ⁺ / lacO⁻ lacZ⁻      |  停不下來  | +             |
+| 7  | F' lacIˢ lacZ⁺ / lacI⁺ lacZ⁺      | 無法增加表現  | −             |
+| 8  | F' lacI⁺ lacZ⁺ / lacIˢ lacZ⁺      |  無法增加表現   | −             |
+| 9  | F' lacP⁻ lacZ⁺ / lacP⁺ lacZ⁺      |  正常狀況  | +             |
+| 10 | F' lacP⁺ lacZ⁺ / lacP⁻ lacZ⁺      |  正常狀況  | +             |
+| 11 | F' lacP⁻ lacZ⁺ / lacP⁻ lacZ⁺      |  無法增加表現  | −             |
+| 12 | F' lacP⁺ lacZ⁺ / lacP⁻ lacZ⁺      | 正常狀況  | +             |
+
+#### lac operon核心介紹
+
+| 元件 | 功能 | 
+| --- | --- | --- |
+| **lacZ** | 編碼 $\beta$ -galactosidase，把乳糖分解成葡萄糖 + 半乳糖 |
+| **lacY** | 編碼**乳糖滲透酶 (permease)**，幫助乳糖進入細胞 | 
+| **lacA** | 編碼 **transacetylase**，功能較次要，可能幫助處理副產物 | 
+| **lacI** | 編碼 **抑制蛋白 (repressor)**，能結合到 operator 阻止轉錄 | 
+| **lacO (operator)** | 抑制蛋白的結合位點，決定 operon 是否被關閉 | 
+| **lacP (promoter)** | RNA polymerase 的結合位點，決定是否能開始轉錄 | 
+| **CAP site** | cAMP-CAP 複合體的結合位點，增強轉錄 | 
+
+> [!Note]
+> 由於repressor是水溶性分子，因此lacI相對於operon的位置**沒有那麼重要** 🐱
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/lac_operon_0508.png)
+
+#### 噪音的 "好處"
+- lac operon 在 "關閉" 狀態時，理論上lacY不應該表達。但因為基因表達本身有隨機性 (noise)，即使operon沒被誘導，還是會有少量 "漏表達"
+- 這些少量的 lacY 分子就像偷偷留著的門，讓一點點乳糖有機會進入細胞。一旦乳糖進來，就會轉化成 allolactose，結合抑制蛋白，解除抑制
+
+#### cAMP and glucose
+- 在細菌身上，通常:
+  - 葡萄糖高 → 抑制 adenylate cyclase → cAMP 減少
+  - 葡萄糖低 → adenylate cyclase 活化 → cAMP 增加
+- cAMP 會和 CAP (catabolite activator protein) 結合，形成 cAMP–CAP 複合體
+- 這個複合體能結合到 lac operon 的 CAP site，幫助 RNA polymerase 更有效率地啟動轉錄
+- 如果葡萄糖量很高，CAP-cAMP 不存在，會使operon表達減弱，即使有乳糖也不會全力開啟
+- 這又稱為葡萄糖優先效應 (catabolite repression)
+
+> [!Tip]
+> 只有葡萄糖缺失 + 乳糖存在，才有開啟lac operon的必要 ! 🐱
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/four_regulatory_state_of_lac_operon_0508.png)
+
+##### 註解: repressor的物理阻撓
+- acI 抑制蛋白是一個四聚體 (tetramer)，它有兩個DNA結合位點，當它同時抓住兩個位點時，DNA會被 "拉成" 一個loop
+- 這個 DNA loop 會讓 RNA polymerase 更難進入 promoter，進一步加強抑制效果
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/lac_operon_repression_loop_0508.png)
+
+####  Trp operon
+- 色氨酸操縱組負責合成tryptophan的一系列酵素。屬於 repressible operon，也就是 "平常開著，除非有足夠的色氨酸才會關掉" 的基因
+- 包含trpE、trpD、trpC、trpB、trpA等基因
+- trpR基因編碼抑制蛋白，本身是不活化的，需要色氨酸作為 corepressor
+- 當細胞內色氨酸濃度高，色氨酸結合抑制蛋白，導致repressor活化，結合 operator，進而阻止轉錄
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/trp_operon.png)
+
+
+### 轉錄終止的調節
+#### 衰減機制 attenuation
+- 在trp operon的leader區域 (trpL)，有一段能形成不同二級結構的mRNA，其中有兩個連續的色氨酸密碼子 (UGG)
+- 這個mRNA本身有多個互補序列，能彼此形成 stem-loop 結構: 
+   - region 1: 包含兩個Trp密碼子
+   - region 2: 能和region 1或region 3配對
+   - region 3: 能和region 2或region 4配對
+   - region 4: 在後面，能和region 3配對形成 "終止結構"
+- 當ribosome開始轉譯leader peptide，會遇到這兩個Trp密碼子，如果色氨酸很多，那 $tRNA^{Trp}$ 很充足，ribosome可以順利快速轉譯過region 1，反之
+- 當Trp很多，ribosome跑過去時，region 3與region 4配對，形成terminator hairpin，導致RNA pol卡住，無法繼續轉錄operon
+- 這讓細菌能根據色氨酸濃度的不同，微調operon的表達量，而不是單純的 on/off
+
+![image alt](https://microbenotes.com/wp-content/uploads/2018/09/Trp-Operon-Attenuation.png)
+
+- 當然，很多其他的氨基酸生合成的操縱子，也都會利用 "leader peptide + 重複的對應氨基酸密碼子" 來做 attenuation，例如His operon (leader peptide裡有七個histidine密碼子)、Leu operon (leader peptide裡有四個leucine密碼子)
+
+##### 備註: TRAP 
+- TRAP (tryptophan RNA binding attenuation protein) 是枯草桿菌 (*Bacillus subtilis*) 在調控trp operon時的一個特別機制
+- 是一個11個相同次單元 (undecamer) 組成的環狀多聚體，每個次單元都能結合一個色氨酸分子，只有當TRAP結合足夠的Trp後，才會改變構型，具備結合RNA的能力
+- 活化的TRAP能結合到leader mRNA上的11個G/U-rich 重複序列，這種結合促使mRNA折疊成terminator hairpin 
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/tryptophan_RNA_binding_attenuation_protein_0508.png)
+
+#### riboswitch
+- riboswitch也是靠 mRNA 自己折疊成 hairpin 來調控的機制。它和attenuation有點像，但它不需要額外的蛋白質或ribosome干預
+- 它是一段位於mRNA 5′ UTR的特殊序列。它能直接和小分子代謝物結合，像是氨基酸、核苷酸、維生素衍生物。當代謝物結合後，mRNA 的二級結構會改變
+- 例如來自枯草桿菌的*yitJ* gene，負責甲硫胺酸的生物合成。由SAM (S-adenosylmethionine, 甲硫胺酸的衍生物) 的濃度影響
+  - 當SAM濃度高，mRNA折疊成terminator hairpin，導致轉錄終止
+  - 當SAM濃度低，mRNA折疊成anti-terminator hairpin，轉錄繼續
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/riboswitch_regulation_by_the_yitJ_leader_RNA_0508.png)
+
+### 嗜菌體 $\lambda$ 的調節方式
+- phage $\lambda$ 有兩個生命週期: lytic cycle和lysogenic cycle
+
+#### 簡介
+- lytic cycle
+  - 進入宿主: phage $\lambda$ 把DNA注入大腸桿菌
+  - 複製: 病毒基因迅速表達，製造大量噬菌體蛋白與DNA
+  - 組裝: 新噬菌體顆粒在細胞內組裝完成
+  - 裂解: 噬菌體產生溶菌酶，破壞細胞壁，導致細胞破裂、新病毒釋放
+- lysogenic cycle: 
+  - 進入宿主: phage $\lambda$ 把DNA注入大腸桿菌
+  - 整合到宿主染色體: 病毒DNA透過integrase入宿主染色體，成為prophage
+  - 潛伏: 病毒基因大多不表達，隨著宿主DNA一起複製
+- 當宿主受到壓力 (如 UV、DNA 損傷) 時，prophage會被激活，轉換到lytic cycle 
+
+![image alt](https://worksheets.clipart-library.com/images2/lytic-and-lysogenic-cycle-worksheet/lytic-and-lysogenic-cycle-worksheet-7.png)
+
+#### 基因的調控
+```mermaid
+flowchart LR
+    A([起始轉錄<br>P_R / P_L]) --> B([N 蛋白<br>幫助延長轉錄])
+    B --> C(cII/cIII 穩定嗎?)
+
+    C -->|是| D([活化 P_RE / P_I]) 
+    D-->D1([表達 cI])
+    D1 --> E([cI repressor<br>抑制 P_R / P_L])
+    E --> F([活化 P_RM]) 
+    F-->F1([維持 cI])
+    F1 --> G{Lysogenic<br>cycle}
+
+    C -->|否| H([Cro 優勢])
+    H-->H1([抑制 P_RM])
+    H1 --> I1([Q 蛋白反終止]) 
+    I1-->I2([晚期基因表達])
+    I2 --> J([結構蛋白 + 溶菌酶])
+    J --> K{Lytic<br>cycle}
+```
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/bacteriophage_lambda_life_cycle_and_gene_transcription_0508.png)
