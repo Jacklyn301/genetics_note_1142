@@ -3,13 +3,6 @@ title: genetic_1142_3rd_midterm
 
 ---
 
-<style>
-    .markdown-body {
-        max-width: 1000px !important;
-        margin: 0 auto
-    }
-</style> 
-
 # genetic note
 ## Ch6
 ### karyotype
