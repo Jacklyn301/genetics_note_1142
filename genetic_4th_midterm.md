@@ -3,13 +3,6 @@ title: genetic_1142_4th_midterm
 
 ---
 
-<style>
-    .markdown-body {
-        max-width: 1000px !important;
-        margin: 0 auto
-    }
-</style> 
-
 # genetic note
 ## ch8
 - 病毒跟病毒的天敵 (phage) 有很特殊的生殖系統跟基因交換方式
@@ -845,10 +838,7 @@ sequencing)，就是cDNA來捕獲含有同源序列的基因組片段
 
 ![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/whole_exome_sequencing_process_0602.png)
 
-### Functional Genomics
-### Transgenic Organisms
-### Gene Editing
-### Some Applications of Genetic Engineering
+
 
 [^1]: https://www.genome.gov/about-genomics/fact-sheets/DNA-Sequencing-Costs-Data
 
