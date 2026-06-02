@@ -1,10 +1,10 @@
 ---
 
-title: Genetic_1142_2nd_midterm
+title: genetic_1142_2nd_midterm
 
 ---
 
-# Genetic note
+# genetic note
 ## CH9: molecular organization of chromosome
 ### genome型態
 #### C-value paradox
