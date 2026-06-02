@@ -838,7 +838,7 @@ sequencing)，就是cDNA來捕獲含有同源序列的基因組片段
 
 ![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/whole_exome_sequencing_process_0602.png)
 
-
+### 資料來源 🐱
 
 [^1]: https://www.genome.gov/about-genomics/fact-sheets/DNA-Sequencing-Costs-Data
 
