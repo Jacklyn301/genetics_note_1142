@@ -1,7 +1,9 @@
----
-title: genetic_1142_4th_midterm
-
----
+<style>
+    .markdown-body {
+        max-width: 1000px !important;
+        margin: 0 auto
+    }
+</style> 
 
 # genetic note
 ## ch8
@@ -514,7 +516,7 @@ CTTAAG              CTTAA           G
 
 ```text
 TGGCCA              TGG           CCA
-||||||  → 切割後 →    |||     +     |||
+||||||  → 切割後 →   |||     +     |||
 ACCGGT              ACC           GGT
 ```
 - 如果DNA片段由同一種限制酶產生，那該生物體中獲取的片段和另一個生物體中得到的片段end形式相同
@@ -769,7 +771,7 @@ ATCCA
 
 ```text
 ABCDE
-  +      →   ABCXYZE 🤣
+  +      →   ABCDXYZE 🤣
 ABXYZE
 ```
 
@@ -837,6 +839,278 @@ sequencing)，就是cDNA來捕獲含有同源序列的基因組片段
   - 最後將序列對照到 reference genome，確認它們的位置與功能
 
 ![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/whole_exome_sequencing_process_0602.png)
+
+#### comparative genomics
+- 透過識別和其他物種中具有相似序列的基因，可以獲得有用的信息
+- 方法之一就是比較具有不同分化時間的近原物種的基因組序列
+- 這被稱為**比較基因組學**
+- 相似的物種在演化時可能會因為基因的倒位而導致其跟別的物種分開
+- 這些 "功能元件" 在不同相似物種間的差異，就是演化在基因上的一個展現
+   - 通常，**noncoding區域**突變狀況即使很多，依然不影響，因此偶有出現大範圍，非3個密碼子的突變
+   - 而**exon區域**，突變偶有存在，但是多數為同義突變，就算是框移突變基本上就是一次少3個核甘酸，這樣對蛋白質的構造影響也較低
+   - 在基因調控的區域 (**regulatory motif**)，有些序列基本上位置即使變化了一點，序列依然不變 (如 `TTATATATTA` 之類的區域)，很多 enhancer 就是這樣被找到的，即使不用做實驗，看到所有生物都有一塊特殊序列，就一定有鬼
+   - **RNA的hairpin**，保守的部分不是看序列保守，而是看結構保守。例如原本的 `G-C` ，後來演化變 `A-U`。序列變了，但結構還在
+   - **miRNA**如果直接拿 "microRNA的前驅體" 比較，會發現中間成熟 miRNA 區域超保守，完全一模一樣
+
+| 類型              | 演化訊號    |
+| --------------- | ------- |
+| Noncoding DNA   | 亂變      |
+| Coding exon     | 偏好保持蛋白質 |
+| TF binding site | motif保守 |
+| RNA structure   | 結構保守    |
+| miRNA           | 極度保守    |
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/evolutionary_relationships_among_12_Drosophila_species_comparative_genomics_0603.png)
+
+
+### Functional Genomics
+- 主要專注於基因組內基因表現模式、以及表現之間的協調機制。例如一個基因表現量下降，另一個基因表現量可能上升，但原因是什麼?
+- 這個時候，我們可以去看其mRNA的一些特徵，例如: 什麼基因的mRNA出現，結構長怎樣 (可能經過剪切)，以及轉錄了多少
+
+#### DNA microarray
+- 這個研究可以利用DNA microarray (chip) 來解決
+   - 在玻片或晶片上固定大量已知基因的 DNA 探針
+   - 將樣本的 mRNA 轉成 cDNA，並加上螢光標記，讓它與晶片上的探針雜交
+   - 不同位置的螢光強度代表該基因的表達量
+   - 根據基因的強度，建立基因之間的表達關聯，並推測調控路徑
+- 此技術也可以檢驗癌細胞，因為癌細胞的基因表達跟正常細胞有非常大的差別
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/DNA_microarray_and_cancer_detection_0603.jpg)
+
+- 這種技術的最大限制就是，它只能針對已經有參考基因組序列的生物體，而且如果相關的序列之間的雜交會導致噪音上升
+- 還有，雜交也有飽和的問題，一旦表現超過某個特定的量，呈現出來的螢光強度就已經達到上限值，訊號強度跟基因表現強度不在呈現正比
+
+#### RNA sequencing
+- RNA-seq 能直接定序所有轉錄本，靈敏度高，相對於chip，能偵測低表達基因
+- 而且RNA-seq 不需要先驗知識，能發現新基因、剪接變異、融合基因 (不需要事先知道基因序列)
+- 也能提供 read counts，可直接用統計方法做定量分析 (沒有背景噪音的問題)
+- 至於RNA sequencing的過程，就是cDNA在PCR之後做定序，也就是: 
+
+```mermaid
+flowchart LR
+  A([抽取總 RNA])-->B([先去除 rRNA<br>只留下 mRNA])-->C([逆轉錄酶<br>轉成 cDNA])-->D([cDNA 片段化，加上<br>接頭序列，adapters])-->E([cDNA library<br>進行 PCR])-->F([Illumina<br>讀取 cDNA 片段])-->G([定序結果 reads 對照到<br>reference genome<br>或 transcriptome])
+```
+
+#### volcano plot
+- 把統計顯著性和表達倍數變化同時呈現出來，讓你一眼就能看出哪些基因 "最值得注意"
+- 每一個點都是一個基因或是mRNA，因為大部分基因差異不大，只有少數基因顯著上/下調，所以圖形看起來像火山
+- 通常來說分析方式如下: 
+
+##### $\log_2$ fold change
+- 位於 X 軸，表示基因表達量的**變化倍數**
+   - 左邊: **下調 (down-regulated)** 基因
+   - 右邊: **上調 (up-regulated)** 基因
+
+##### $–\log_{10}$ p-value
+- 表示統計顯著性
+   - 上方: 顯著性高
+   - 下方: 顯著性低
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/volcano_plot_and_RNA_seq_0603.png)
+
+|位置|代表意義|
+|---|---|
+|**中間區域 (log2 fold change ≈ 0)**|基因表達差異不大|
+|左右兩側 (log2 fold change ↑)|表達量有顯著上升或下降|
+|頂端 (–log10 p-value ↑)|統計顯著性強，可信度高|
+
+#### heat map
+- 不是用點圖，而是用顏色代表基因表達量的高低。甚至可以把表達模式相似的基因或樣本分組，揭示潛在的調控網路。通常來說: 
+
+##### 顏色
+- 代表表達量
+   - 紅色/黃色: 高表達
+   - 藍色/綠色: 低表達
+   - 中間色: 中等或無顯著差異
+
+##### 橫軸 vs 縱軸
+- 橫軸: 不同樣本或條件
+- 縱軸: 不同基因。
+
+##### 群集樹 (dendrogram)
+- 常附在 heat map 上，顯示基因或樣本的相似性
+- 越靠近的分支代表表達模式越相似
+
+![image alt](https://www.rna-seqblog.com/wp-content/uploads/2015/02/heat-feat.png)
+
+#### quantitative PCR
+- 如果我的DNA用螢光訊號標記，每一次PCR都會翻倍，螢光訊號也會隨時間增加到最大值 (通常呈現出S型曲線)
+- Ct值 = Cycle Threshold，有點類似於 "該DNA達到某個特定螢光值時，其被複製的次數": 
+
+$$N = N_0 \times 2^n$$
+
+- 因此可以回推出原本樣本中含有的數量: 
+   - Ct小 = 起始RNA多
+   - Ct大 = 起始RNA少
+- 在 qPCR 的 Amplification Plot 裡，域值以下的亂線通常代表: 
+   - 基線雜訊 (Baseline Noise): 在循環數還很低 (比如 Cycle 5-15) 的時候，螢幕訊號還沒強過背景雜訊，所以儀器會在那邊亂跳
+   - 引子二聚體 (Primer Dimers) 或非特異性產物: 這些小東西會在早期循環中產生微弱螢光，但不是你真的想測的那個目標基因
+   - 偵測極限以下的波動: 就是雜訊，儀器自己也搞不清楚自己在讀什麼 🤣
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/amplification_plot_and_ct_value_0603.avif)
+
+#### chromatin immunoprecipitation
+- ChIP，染色質免疫沉澱主要用來研究蛋白質和 DNA 在染色質中的結合位置
+- 利用抗體抓取與 DNA 結合的蛋白質，然後分析這些蛋白質所附著的 DNA 片段，通常步驟為: 
+   - **Crosslinking**: 用甲醛等試劑把蛋白質和 DNA 在細胞裡面 "固定" 起來
+   - **Chromatin shearing**: 超音波或酶切，將染色質打碎成小片段
+   - **Immunoprecipitation**: 用特異性抗體抓取目標蛋白質，抗體會把蛋白質和它結合的 DNA 一起拉下來
+   - **Reverse crosslinking**: 去除交聯，釋放出 DNA
+   - **DNA 分析**: ChIP-seq，利用高通量定序分析全基因組的結合位置
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/chromatin_immunoprecipitation_overview_workflows_0603.jpg)
+
+#### Yeast Two-Hybrid, Y2H
+- 主要利用酵母的 GAL4 轉錄因子偵測**蛋白質–蛋白質交互作用**
+- GAL4 轉錄因子有兩個功能區域: 
+   - DNA-binding domain (BD): 能結合到 DNA 上的 promoter region
+   - activation domain (AD): 能招募轉錄複合體，啟動基因表達
+- 如果把這兩個區域分開，單獨存在時都不能啟動轉錄
+- 但如果 BD 與 AD 被兩個互相結合的蛋白質拉到一起，就能重新組合成完整的 GAL4 功能，基因表達啟動。通常來說: 
+   - 科學家先構建融合蛋白: 亞基包含 **"蛋白質 X + BD"** ，以及 **"蛋白質 Y + AD"**
+   - 把這兩個融合基因轉入酵母細胞，如果 X 與 Y 本身在生物體內就是 partner，那麼在 Y2H 系統中它們也會自然結合
+   - X 和 Y的交互作用可以促進原本分很開的 BD 和 AD 結合在一起
+   - 沒有 X–Y 的結合，GAL4 的 BD 和 AD 永遠不會 "自動合體"
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/yeast-two-hybrid_mechanism_0603.png)
+
+### Transgenic Organisms
+#### P element and 生殖系轉殖
+- 首先在了解該基因編輯的概念之前，需要知道幾個重要詞彙: 
+
+| 概念             | 問題              |
+| -------------- | --------------- |
+| Transformation | 怎麼把 DNA 送進細胞？   |
+| Transgenesis   | 怎麼讓 DNA 留在生物體裡？ |
+| Genome editing | 怎麼修改特定位置？       |
+
+- 進行DNA送細胞的過程中，細菌簡單，你可以用 $CaCl_2$ 、heat shock或 electroporation，打個洞就行
+- 但是線蟲、果蠅、小鼠怎麼辦? 你沒辦法把整隻果蠅丟進電穿孔機 (至少老師不會允許 🌚)
+- 後來有人發現了transposon，也就是jumping genes (Barbara McClintock 當年發現的那群東西)
+- 而P element 是果蠅的 transposon，長這樣: `ITR ---transposase gene --- ITR`
+- ITR又叫做Inverted Terminal Repeat，是 transposase 認得的標記。transposase會從這裡剪下、複製，貼上 🔪📦
+- 因此有人想到把P-element中間的transposase gene挖掉，插入別的基因。Transposase 看到 ITR，以為老朋友來了，於是把該基因整段送進基因組，這就變成生殖系轉殖
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/transformation_with_P_element_in_Drisophila_0603.png)
+
+#### embryonic stem cells
+
+- 早期的 transgenic mouse 常常會先得到 Chimera mouse，因為他們不是從受精卵直接注入DNA，而是將基因改造的胚胎幹細胞匯入囊胚中，導致為改造的ESC跟改造的ESC混在一起
+- 研究人員真正想要的是germline transmission，如果基改過的 ES cell 最後形成sperm或是oocyte，那麼修改過的基因就能傳給下一代
+- 幹細胞對應的毛色會被利用確認是否轉殖成功，blastocyst = 白色品系 (Albino) ，ES cell = 黑色品系 (C57BL/6)，研究人員根本不用做 PCR。看毛色就知道 ES cell 是否有參與發育
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/transformation_of_the_germ_line_in_the_mouse_via_ESC_0603.png)
+
+#### gene targeting
+- 假如說一個生物的基因組為
+
+```text
+A A A A A
+GENE-X
+B B B B B
+```
+
+- 我設計一段 DNA，左右兩邊故意跟基因組一模一樣 (Homology Arms): 
+
+```text
+A A A A A
+NeoR
+B B B B B
+```
+
+- 細胞看到這個基因兩邊的緒很像，於是進行重組。導致中間的GENE-X被替換掉了。這其實就是Knockout Mouse最經典的原理
+- 但是有個大問題，細胞其實很懶。你提供Targeting vector，細胞可能根本不鳥你，甚至直接隨便插進基因組某個地方。成功發生正確 HR 的機率可能低於0.001
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/gene_targeting_in_ESC_0603.png)
+
+#### 植物的基因編輯技術
+- 植物比動物或是細菌都有更大問題: 
+   - 細菌: 熱休克，搞定
+   - 動物細胞: 注射ESC，搞定
+   - 植物: 老子有細胞壁 🌚
+- 後來發現一種植物癌症，*Agrobacterium tumefaciens* 是一種土壤細菌，它會感染植物傷口 (樹皮破洞時跑進去)，導致植物長瘤
+- 研究人員後來發現，這細菌居然會把自己的DNA送進植物細胞，並發現了腫瘤誘導質體 (Ti plasmid)，裡面有一塊Transfer DNA (T-DNA)
+- 感染時，細菌會把T-DNA剪下來，送進植物細胞，最後甚至整合進植物染色體
+- 原本的T-DNA其實有包含auxin synthesis genes以及cytokinin synthesis genes (植物細胞表示: 我可以24/7生到high起來)
+- 因此可能會把腫瘤基因刪掉，避免植物染病
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/Ti-plasmid_structure_0603.png)
+
+
+#### 人類如何 ~~累死其它生物~~ 獲得超能力 🙂
+
+|特性|before|after|
+|---|---|---|
+|transposon|轉座子本來會跳|拿來做 P element|
+|virus|病毒本來會感染|拿來做 viral vector|
+|crossover|同源重組本來會修 DNA|拿來做 knockout mouse|
+|Ti plasmid|讓植物長癌|做植物基因編輯|
+|CRISPR|CRISPR 本來是細菌的免疫系統|拿來做基因編輯|
+
+#### transformation rescue
+- 其實就是一個概念: 原本是突變的生物體，在我插入基因後，表型恢復 🤣
+- 但是重點是: 這同時證明**真正出問題的就是這個基因**，假如說你knockout一個基因 X，產生翅膀缺陷，你不能確定 X 就是控制翅膀形狀的，因為插入位置效應或其他突變，也可能造成問題
+- 如果再做 gene X+ 補回去，發現翅膀恢復，那就很有力地證明，真的是 gene X 的問題 🥳
+
+#### forward and reverse genetics
+##### 🔹 Forward Genetics
+- 從表型 (phenotype) 開始找
+- 先觀察到某個突變或特殊表型。再去追蹤、定位是哪個基因造成這個表型
+
+> [!Tip]
+> - 例如，植物中看到花色突變 → 透過遺傳定位找到控制花色的基因
+> - 看到症狀 → 找病因 🐱
+
+##### 🔹 Reverse Genetics
+- 從基因 (genotype) 開始找
+- 先選定一個基因 (通常已知序列)，再透過基因敲除、RNAi、CRISPR 等方法改變它。然後觀察改變後的表型
+
+> [!Tip]
+> - 敲掉某個疑似與免疫相關的基因 → 看細胞是否失去免疫反應
+> - 知道病因 → 看會不會出現症狀 🐱
+
+| 特性 | Forward Genetics | Reverse Genetics |
+| --- | --- | --- |
+| 出發點 | 表型 (phenotype) | 基因 (genotype) |
+| 目標 | 找出造成表型的基因 | 驗證基因的功能 |
+| 常用技術 | 突變篩選、連鎖分析 | 基因敲除、RNAi、CRISPR |
+| 優勢 | 發現未知基因 | 精準測試已知基因 |
+| 比喻 | 看症狀找病因 | 改病因看症狀 |
+
+#### RNA 干擾
+- *Notch* 是 Cell-cell signaling pathway，也就是細胞間訊號傳遞系統
+- 所以 Notch 缺陷時，神經系統、翅膀、眼睛、體節都可能影響，該名字取自於 "翅膀會缺刻" 的表型命名而來
+- 當時一研究並不是透過將*Notch* 整個丟掉形成該突變，而是透過降低mRNA表現量達成 (基因還在)
+
+> [!Important]
+> - Knockout = 完全停電
+> - Knockdown = 調暗燈光 😲
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/gene-silencing-mechanisms-of-siRNA-and-miRNA.webp)
+
+- 為什麼 *Notch* 不能整個敲除，而要用 RNAi? 因為有些基因根本不能 knockout
+- *Notch* 如果完全敲掉，很多時候胚胎會直接死給你看 (死掉的胚胎你是要看什麼表型?)
+- 所以改用 RNAi，讓 Notch 剩 20% 或 10% 的表現量，動物還活著，但會出現表型
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/Notch_phenotype_on_Drosophila_melanogaster_wings_0603.webp)
+
+### Gene Editing
+- 有一天 CRISPR 出現了，打亂原還的生活，因為該內切酶會導致DNA雙股斷裂 (細胞嚇死)，終於不再需要用機率可憐的recombination做基因編輯了。因為細胞開啟DNA Repair幾乎是一定的，增加了成功率
+- 狀況可能包含: 
+   - **NHEJ (Non-Homologous End Joining)**: 也就是 "斷掉隨便接"，通常造成deletion或是insertion (indel)，導致frameshift (基因直接knockout)
+   - **HDR (Homology Directed Repair)** : 也就是 "斷掉找模板來修" 如果研究者是先提供修復模板，細胞就可能照模板抄
+
+![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/double_strand_break_repair_in_DNA_0603.png)
+
+- 當然，通常來說，NHEJ比HDR簡單，因為細胞其實超愛 NHEJ。細胞偏好趕快接好比較重要，而不是 "花兩小時仔細閱讀維修手冊" 
+- 事實上就算你在Cas9切斷DNA後丟 donor template 給細胞，也不代表它一定用
+
+> [!Tip]
+> Cas9 → DSB → 細胞看見模板了 → 細胞還是用NHEJ 💀
+
+
+---
+
 
 ### 資料來源 🐱
 
