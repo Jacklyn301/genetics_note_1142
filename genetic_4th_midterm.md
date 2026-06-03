@@ -1,10 +1,3 @@
-<style>
-    .markdown-body {
-        max-width: 1000px !important;
-        margin: 0 auto
-    }
-</style> 
-
 # genetic note
 ## ch8
 - 病毒跟病毒的天敵 (phage) 有很特殊的生殖系統跟基因交換方式
