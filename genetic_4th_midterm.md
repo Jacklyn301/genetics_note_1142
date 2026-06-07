@@ -3,12 +3,6 @@ title: genetic_1142_4th_midterm
 
 ---
 
-<style>
-    .markdown-body {
-        max-width: 1000px !important;
-        margin: 0 auto
-    }
-</style> 
 
 # genetic note
 ## ch8
