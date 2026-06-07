@@ -1108,7 +1108,7 @@ B B B B B
 > Cas9 → DSB → 細胞看見模板了 → 細胞還是用NHEJ 💀
 
 ---
-## ch14
+## ch16
 ### The Cell Cycle
 - 有絲分裂兩個目的: 
    - 確保DNA複製一次而且只有一次
