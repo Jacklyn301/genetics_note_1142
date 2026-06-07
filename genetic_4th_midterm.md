@@ -1221,8 +1221,6 @@ B B B B B
 > [!Tip]
 > 這一步就是 $G_1$ 限制點 (restriction point)，一旦通過，細胞就承諾進入 S 期 🐱
 
-![image alt](https://raw.githubusercontent.com/Jacklyn301/image_bank/main/renaturaton_of_phage_DNA_0421.png)
-
 #### DNA 複製起始
 - 組裝 pre-RC (pre-replication complex)
    - 在 DNA 複製起始點 (origin of replication)，CDC6 與其他複製蛋白組裝成 pre-RC
