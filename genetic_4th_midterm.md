@@ -70,7 +70,7 @@ title: genetic_1142_4th_midterm
 |**碳原性的突變**| $Lac^-$ 突變種無法利用乳糖|
 
 - 舉個栗子 🌰
-   - His^- auxotroph：缺乏合成組氨酸的能力 → 培養基必須加組氨酸才能生長
+   - $His^-$ auxotroph：缺乏合成組氨酸的能力 → 培養基必須加組氨酸才能生長
    - $Trp^-$ auxotroph：不能合成色氨酸 → 需要外加色氨酸
    - $Leu^-$ auxotroph：不能合成亮氨酸 → 需要外加亮氨酸
 
