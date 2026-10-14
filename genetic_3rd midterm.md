@@ -10,7 +10,7 @@ title: genetic_1142_3rd_midterm
 - 利用 "chromosome painting"，可以標記各個染色體，利用的方式是FISH (fluorescent *in situ* hybridization)
 - 由於螢光原位雜交會針對類似於探針的序列進行雜交，所以有相似條帶顏色的染色體，基本上就是同源染色體啦 🐱
 
-![image alt](https://assets.lls.fr/pages/45867139/SVT.2de.14.EXO8.caryotype-retouche.webp)
+![image alt](https://raw.githubusercontent.com/Jacklyn301/2_image_bank/main/fluorescent_in_situ_hybridization_in_human_female_karyotype_1015.webp)
 
 #### 染色體條帶的產生
 - 染色體通常分為幾個部分: 
